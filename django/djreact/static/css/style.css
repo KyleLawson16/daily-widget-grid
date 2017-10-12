@@ -1,4 +1,8 @@
-#vote-count {
-  text-align: right;
-  float: right;
+.card {
+  width: 100%;
+  border: 1px solid blue;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 25px 10px;
+  height: 45vh;
 }
