@@ -10,7 +10,7 @@ class WeatherWidget extends Component {
         <div className="row">
           <div className="col-xs-12 col-md-4">
             <div className="card">
-              <p><strong>Weather</strong></p>
+              <p className="widget-label"><strong>Weather</strong></p>
               <SearchBar />
               <WeatherData />
             </div>
