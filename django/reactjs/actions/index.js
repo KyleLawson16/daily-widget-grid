@@ -5,7 +5,7 @@ axios.defaults.xsrfCookieName = "csrftoken";
 
 const ROOT_URL = 'http://localhost:8000/api/';
 
-const WEATHER_API_KEY = '2d32c437eedb3bb7092fd74c1270894e';
+const WEATHER_API_KEY = '7c2b16a0e331787165ab560df016c064';
 const WEATHER_ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=${WEATHER_API_KEY}`;
 
 export const FETCH_WEATHER = 'FETCH_WEATHER';

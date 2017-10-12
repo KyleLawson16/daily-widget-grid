@@ -2,33 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class WeatherData extends Component {
-  renderWeather(cityData) {
-    const name = cityData.name;
-    const temp = Math.round(((cityData.main.temp) * (9 / 5)) - 459.67);
-    const description = cityData.weather[0].description;
+  render() {
+    if (!this.props.name) {
+      return <div>Select a city to get started!</div>;
+    }
 
     return (
-      <div key={name}>
+      <div key={this.props.name}>
         <h1>
-          {name}
+          {this.props.name}
         </h1>
         <h3>
           Current Conditions:<br />
-          {temp} &#8457;<br />
-          {description}
+        {this.props.temp} &#8457;<br />
+        {this.props.desc}
         </h3>
         <h3>
 
         </h3>
-      </div>
-
-    )
-  }
-
-  render() {
-    return (
-      <div>
-        {this.props.weather.map(this.renderWeather)}
       </div>
     );
   };
