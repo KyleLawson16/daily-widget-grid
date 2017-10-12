@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
+import { postWeather } from '../actions/index';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -20,28 +21,32 @@ class SearchBar extends Component {
   onFormSubmit(e) {
     e.preventDefault();
     this.props.fetchWeather(this.state.term);
+    this.props.postWeather(this.state.term);
     this.setState({ term: '' });
     document.getElementById('weatherSearch').style.display = "none";
   }
 
   render() {
     return (
-      <form id="weatherSearch" className="input-group vertical-center" onSubmit={this.onFormSubmit}>
-        <input
-          placeholder="Get the current weather of your city"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange} />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
-        </span>
-      </form>
+      <div id="weatherSearch" className="vertical-center">
+        <p>Add a city to see it's current weather conditions</p>
+        <form className="input-group" onSubmit={this.onFormSubmit}>
+          <input
+            placeholder="Get the current weather of your city"
+            className="form-control"
+            value={this.state.term}
+            onChange={this.onInputChange} />
+          <span className="input-group-btn">
+            <button type="submit" className="btn btn-secondary">Submit</button>
+          </span>
+        </form>
+      </div>
     );
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchWeather }, dispatch);
+  return bindActionCreators({ fetchWeather, postWeather }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

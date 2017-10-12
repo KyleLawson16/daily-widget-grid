@@ -19,10 +19,10 @@ from django.views import generic
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include("hello_world.api.urls", namespace='api')),
+    url(r'^api/', include("widgets.api.urls", namespace='api')),
     url(r'^view2/',
       generic.TemplateView.as_view(template_name='view2.html')),
-    url(r'^',
+    url(r'^dashboard/',
       generic.TemplateView.as_view(template_name='view1.html')),
 
 

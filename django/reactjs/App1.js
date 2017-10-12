@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/" component={WeatherWidget} />
+          <Route exact path="/dashboard" component={WeatherWidget} />
         </Switch>
       </div>
     </BrowserRouter>
