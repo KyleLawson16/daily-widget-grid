@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class WeatherList extends Component {
+class WeatherData extends Component {
   renderWeather(cityData) {
     const name = cityData.name;
     const temp = Math.round(((cityData.main.temp) * (9 / 5)) - 459.67);
@@ -40,4 +40,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(WeatherList);
+export default connect(mapStateToProps)(WeatherData);

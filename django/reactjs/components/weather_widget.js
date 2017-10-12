@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import SearchBar from './search_bar';
-import WeatherList from './weather_list';
+import WeatherData from './weather_data';
 
-class HelloWorld extends Component {
+class WeatherWidget extends Component {
   render() {
     return (
       <div className="container-fluid">
@@ -12,7 +12,7 @@ class HelloWorld extends Component {
             <div className="card">
               <p><strong>Weather</strong></p>
               <SearchBar />
-              <WeatherList />
+              <WeatherData />
             </div>
           </div>
         </div>
@@ -21,4 +21,4 @@ class HelloWorld extends Component {
   }
 }
 
-export default HelloWorld;
+export default WeatherWidget;
