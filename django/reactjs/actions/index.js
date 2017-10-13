@@ -11,6 +11,7 @@ const WEATHER_ROOT_URL = `http://api.openweathermap.org/data/2.5/weather?appid=$
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 export const FETCH_WEATHER_CITIES = 'FETCH_WEATHER_CITIES'
 export const POST_WEATHER = 'POST_WEATHER';
+export const DELETE_WEATHER = 'DELETE_WEATHER';
 
 export function fetchWeather(city) {
   const url = `${WEATHER_ROOT_URL}&q=${city},us`;
@@ -39,6 +40,16 @@ export function postWeather(city) {
 
   return {
     type: POST_WEATHER,
+    payload: request
+  };
+}
+
+export function deleteWeather(unique_id) {
+  const url = `${ROOT_URL}weather/${unique_id}/delete/`;
+  const request = axios.delete(url);
+
+  return {
+    type: DELETE_WEATHER,
     payload: request
   };
 }

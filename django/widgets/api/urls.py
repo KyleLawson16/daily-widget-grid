@@ -4,7 +4,8 @@ from django.contrib import admin
 from .views import (
     WeatherListAPIView,
     WeatherCreateAPIView,
-    WeatherDetailAPIView
+    WeatherDetailAPIView,
+    WeatherDeleteAPIView,
 	)
 
 urlpatterns = [
@@ -12,5 +13,5 @@ urlpatterns = [
     url(r'^weather/create/$', WeatherCreateAPIView.as_view(), name='create'),
     url(r'^weather/(?P<unique_id>\w+)/$', WeatherDetailAPIView.as_view(), name='detail'),
     # url(r'^(?P<random_videogate_id>\w+)/edit/$', LeadGenUpdateAPIView.as_view(), name='update'),
-    # url(r'^(?P<random_videogate_id>\w+)/delete/$', LeadGenDeleteAPIView.as_view(), name='delete'),
+    url(r'^weather/(?P<unique_id>\w+)/delete/$', WeatherDeleteAPIView.as_view(), name='delete'),
 ]

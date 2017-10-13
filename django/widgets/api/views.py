@@ -22,6 +22,7 @@ from .serializers import (
     WeatherListSerializer,
     WeatherCreateUpdateSerializer,
     WeatherDetailSerializer,
+    WeatherDeleteSerializer,
 )
 
 
@@ -42,4 +43,9 @@ class WeatherCreateAPIView(CreateAPIView):
 class WeatherDetailAPIView(RetrieveAPIView):
     queryset = Weather.objects.all()
     serializer_class = WeatherDetailSerializer
+    lookup_field = 'unique_id'
+
+class WeatherDeleteAPIView(DestroyAPIView):
+    queryset = Weather.objects.all()
+    serializer_class = WeatherDeleteSerializer
     lookup_field = 'unique_id'

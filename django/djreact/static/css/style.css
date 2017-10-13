@@ -22,3 +22,14 @@ body {
   top: 40%;
   transform: translateY(-50%);
 }
+
+.static-top-right {
+  position: relative;
+  top: 0;
+  right: 0px;
+}
+
+.static-top-right .custom-search {
+  width: 40%;
+  height: 20px;
+}

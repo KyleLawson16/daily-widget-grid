@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import SearchBar from './search_bar';
+import WeatherCityTab from './weather_city_tab';
 import WeatherData from './weather_data';
 
 import { fetchWeather, fetchWeatherCities } from '../actions/index';
@@ -10,36 +11,28 @@ import { fetchWeather, fetchWeatherCities } from '../actions/index';
 class WeatherWidget extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       city: 'Boston'
     }
-
-    this.onCityChange = this.onCityChange.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchWeatherCities();
   }
 
-  onCityChange(city) {
-    this.props.fetchWeather(city);
-  }
-
   renderCities() {
+    this.props.fetchWeatherCities();
     return _.map(this.props.cities, city => {
 
       return (
-        <div key={city.id}>
-          <button onClick={() => this.onCityChange(city.city)}>{city.city}</button>
-        </div>
+        <WeatherCityTab key={city.unique_id} id={city.unique_id} city={city.city} />
       );
     });
   }
 
   renderWeather(cityData) {
     if (!this.props.weather) {
-      return <SearchBar />
+      return <SearchBar full="true" />
     }
 
     const name = this.props.weather.name;
@@ -47,7 +40,10 @@ class WeatherWidget extends Component {
     const description = this.props.weather.weather[0].description;
 
     return (
-      <WeatherData name={name} temp={temp} desc={description} />
+      <div>
+        <SearchBar full="false" />
+        <WeatherData name={name} temp={temp} desc={description} />
+      </div>
     );
   }
 
@@ -59,7 +55,6 @@ class WeatherWidget extends Component {
             <div className="card">
               <p className="widget-label"><strong>Weather</strong></p>
               {this.renderCities()}
-
               {this.renderWeather()}
             </div>
           </div>

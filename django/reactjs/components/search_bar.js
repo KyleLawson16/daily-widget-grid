@@ -26,10 +26,27 @@ class SearchBar extends Component {
   }
 
   render() {
+    if (this.props.full == 'true') {
+      return (
+        <div id="weatherSearch" className="vertical-center">
+          <p>Add a city to see it's current weather conditions</p>
+          <form className="input-group" onSubmit={this.onFormSubmit}>
+            <input
+              placeholder="Get the current weather of your city"
+              className="form-control"
+              value={this.state.term}
+              onChange={this.onInputChange} />
+            <span className="input-group-btn">
+              <button type="submit" className="btn btn-secondary">Submit</button>
+            </span>
+          </form>
+        </div>
+      );
+    }
+
     return (
-      <div id="weatherSearch" className="vertical-center">
-        <p>Add a city to see it's current weather conditions</p>
-        <form className="input-group" onSubmit={this.onFormSubmit}>
+      <div id="weatherSearch" className="static-top-right">
+        <form className="input-group custom-search" onSubmit={this.onFormSubmit}>
           <input
             placeholder="Get the current weather of your city"
             className="form-control"
@@ -41,6 +58,7 @@ class SearchBar extends Component {
         </form>
       </div>
     );
+
   };
 }
 

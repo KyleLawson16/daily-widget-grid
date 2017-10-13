@@ -18,6 +18,7 @@ class WeatherListSerializer(ModelSerializer):
         fields = [
             'url',
             'id',
+            'unique_id',
             'city',
         ]
 
@@ -27,6 +28,11 @@ class WeatherCreateUpdateSerializer(ModelSerializer):
         fields = [
             'city',
         ]
+
+class WeatherDeleteSerializer(ModelSerializer):
+    class Meta:
+        model = Weather
+
 
 class WeatherDetailSerializer(ModelSerializer):
     user = SerializerMethodField()
