@@ -8,7 +8,7 @@ class WeatherData extends Component {
     }
 
     return (
-      <div key={this.props.name}>
+      <div key={this.props.name} className="weather-data">
         <h1>
           {this.props.name}
         </h1>
@@ -17,9 +17,7 @@ class WeatherData extends Component {
         {this.props.temp} &#8457;<br />
         {this.props.desc}
         </h3>
-        <h3>
-
-        </h3>
+        
       </div>
     );
   };

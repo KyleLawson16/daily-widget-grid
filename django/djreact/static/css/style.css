@@ -14,22 +14,40 @@ body {
 
 .widget-label {
   position: relative;
-  top: 0;
+  top: -10px;
 }
 
 .vertical-center {
   position: relative;
-  top: 40%;
+  top: 25%;
   transform: translateY(-50%);
 }
 
 .static-top-right {
   position: relative;
-  top: 0;
-  right: 0px;
+  top: -75px;
+  width: 70%;
+  left: 30%;
 }
 
-.static-top-right .custom-search {
-  width: 40%;
-  height: 20px;
+.btn-group .btn-custom {
+  height: 30px;
+  line-height: 0px;
+  background-color: rgb(135,244,188);
+  color: #000000;
+  font-size: 12px;
+  padding: 5px;
+}
+.btn-group .btn-custom:hover {
+  height: 30px;
+  line-height: 0px;
+  background-color: rgb(181,249,214);
+  color: #000000;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.weather-data {
+  position: relative;
+  top: -40px;
 }

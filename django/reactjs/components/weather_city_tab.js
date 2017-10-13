@@ -25,9 +25,10 @@ class WeatherCityTab extends Component {
     }
 
     return (
-      <div>
-        <button onClick={() => this.onCityChange(this.props.city)}>{this.props.city}</button>
-        <button onClick={() => this.onDeleteCity(this.props.id)}>delete</button>
+      <div className="btn-group" role="group">
+        <button type="button" className="btn btn-custom" onClick={() => this.onCityChange(this.props.city)}>
+          {this.props.city} <i className="fa fa-trash-o" aria-hidden="true" onClick={() => this.onDeleteCity(this.props.id)}></i>
+        </button>
       </div>
     );
   };

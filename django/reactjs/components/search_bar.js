@@ -22,7 +22,6 @@ class SearchBar extends Component {
     this.props.fetchWeather(this.state.term);
     this.props.postWeather(this.state.term);
     this.setState({ term: '' });
-    document.getElementById('weatherSearch').style.display = "none";
   }
 
   render() {
@@ -37,7 +36,7 @@ class SearchBar extends Component {
               value={this.state.term}
               onChange={this.onInputChange} />
             <span className="input-group-btn">
-              <button type="submit" className="btn btn-secondary">Submit</button>
+              <button type="submit" className="btn btn-secondary">Search</button>
             </span>
           </form>
         </div>
@@ -46,14 +45,14 @@ class SearchBar extends Component {
 
     return (
       <div id="weatherSearch" className="static-top-right">
-        <form className="input-group custom-search" onSubmit={this.onFormSubmit}>
+        <form className="input-group input-group-sm custom-search" onSubmit={this.onFormSubmit}>
           <input
-            placeholder="Get the current weather of your city"
+            placeholder="Search cities..."
             className="form-control"
             value={this.state.term}
             onChange={this.onInputChange} />
           <span className="input-group-btn">
-            <button type="submit" className="btn btn-secondary">Submit</button>
+            <button type="submit" className="btn btn-secondary">Search</button>
           </span>
         </form>
       </div>
