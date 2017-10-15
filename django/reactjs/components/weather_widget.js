@@ -48,18 +48,12 @@ class WeatherWidget extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12 col-md-4">
-            <div className="card">
-              <p className="widget-label"><strong>Weather</strong></p>
-              <div className="btn-group" role="group">
-                {this.renderCities()}
-              </div>
-              {this.renderWeather()}
-            </div>
-          </div>
+      <div className="card">
+        <p className="widget-label"><strong>Weather</strong></p>
+        <div className="btn-group" role="group">
+          {this.renderCities()}
         </div>
+        {this.renderWeather()}
       </div>
     )
   }

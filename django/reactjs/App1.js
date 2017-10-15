@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import promise from 'redux-promise';
 
 import reducers from './reducers';
-import WeatherWidget from './components/weather_widget';
+import WidgetPage from './components/widget_page';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path="/dashboard" component={WeatherWidget} />
+          <Route exact path="/dashboard" component={WidgetPage} />
         </Switch>
       </div>
     </BrowserRouter>
