@@ -23,7 +23,6 @@ class WeatherWidget extends Component {
   renderCities() {
     this.props.fetchWeatherCities();
     return _.map(this.props.cities, city => {
-
       return (
         <WeatherCityTab key={city.unique_id} id={city.unique_id} city={city.city} />
       );
