@@ -12,7 +12,7 @@ class WeatherWidget extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      city: 'Boston'
+      city: 'Boston',
     }
   }
 
@@ -62,7 +62,7 @@ class WeatherWidget extends Component {
 function mapStateToProps(state) {
   return {
     cities: state.cities,
-    weather: state.weather
+    weather: state.weather,
    };
 }
 
