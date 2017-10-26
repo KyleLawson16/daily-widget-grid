@@ -41,7 +41,7 @@ body {
 .btn-group .btn-custom:hover {
   background-color: rgb(181,249,214);
 }
-.btn-group .btn-custom-active {
+.btn-custom-active .btn-custom {
   height: 30px;
   line-height: 0px;
   background-color: rgb(181,249,214);

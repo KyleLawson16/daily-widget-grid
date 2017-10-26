@@ -13,6 +13,7 @@ class WeatherWidget extends Component {
     super(props)
     this.state = {
       city: 'Boston',
+      activeCity: ''
     }
   }
 
@@ -20,11 +21,22 @@ class WeatherWidget extends Component {
     this.props.fetchWeatherCities();
   }
 
+  onCityClick(city) {
+    this.setState({ activeCity: city });
+  }
+
   renderCities() {
     this.props.fetchWeatherCities();
     return _.map(this.props.cities, city => {
       return (
-        <WeatherCityTab key={city.unique_id} id={city.unique_id} city={city.city} />
+        <div
+          key={city.unique_id}
+          className={this.state.activeCity === city.city ? 'btn-group btn-custom-active' : 'btn-group'}
+          onClick={() => this.onCityClick(city.city)}>
+          <WeatherCityTab
+            id={city.unique_id}
+            city={city.city} />
+        </div>
       );
     });
   }
@@ -51,7 +63,7 @@ class WeatherWidget extends Component {
       <div className="card">
         <p className="widget-label"><strong>Weather</strong></p>
         <div className="btn-group" role="group">
-          {this.renderCities()}
+            {this.renderCities()}
         </div>
         {this.renderWeather()}
       </div>
