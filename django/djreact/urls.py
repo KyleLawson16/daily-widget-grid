@@ -16,14 +16,17 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views import generic
+from widgets.views import calendar_oauth
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^calendar-auth/', "widgets.views.calendar_oauth", name='calendar'),
     url(r'^api/', include("widgets.api.urls", namespace='api')),
     url(r'^view2/',
       generic.TemplateView.as_view(template_name='view2.html')),
     url(r'^dashboard/',
       generic.TemplateView.as_view(template_name='view1.html')),
+
 
 
 ]
