@@ -1,6 +1,9 @@
 body {
   background-color: rgb(190,196,255);
 }
+a {
+  text-decoration: none !important;
+}
 
 .hidden {
   display: none;
@@ -23,8 +26,11 @@ body {
 
 .vertical-center {
   position: relative;
-  top: 25%;
   transform: translateY(-50%);
+}
+
+.full-searchbar {
+  top: 25%;
 }
 
 .static-top-right {
@@ -37,21 +43,43 @@ body {
 .btn-group .btn-custom {
   height: 30px;
   line-height: 0px;
-  background-color: rgb(135,244,188);
+  background-color: rgb(190,196,255);
   color: #000000;
   font-size: 12px;
   padding: 8px;
+  transition-duration: 400ms;
 }
 .btn-group .btn-custom:hover {
-  background-color: rgb(181,249,214);
+  background-color: rgb(215,219,249);
+  transition-duration: 400ms;
 }
 .btn-custom-active .btn-custom {
   height: 30px;
   line-height: 0px;
-  background-color: rgb(181,249,214);
+  background-color: rgb(215,219,249);
   color: #000000;
   font-size: 12px;
   padding: 8px;
+}
+/* green colors rgb(135,244,188) rgb(181,249,214) */
+
+.btn-custom-oauth {
+  width: 250px;
+  height: 50px;
+  background-color: #ffffff;
+  border: solid 2px rgb(190,196,255);
+  font-size: 1em;
+  color: #333333;
+  transition-duration: 400ms;
+}
+.btn-custom-oauth:hover {
+  border: solid 2px rgb(215,219,249);
+  background-color: rgb(215,219,249);
+  transition-duration: 400ms;
+}
+
+.calendar-btn {
+  top: 35%;
 }
 
 .weather-data {

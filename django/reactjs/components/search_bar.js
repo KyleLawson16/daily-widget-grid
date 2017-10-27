@@ -28,7 +28,7 @@ class SearchBar extends Component {
       return (
         <div
           id="weatherSearch"
-          className={this.props.full === 'true' ? 'vertical-center' : 'static-top-right'}>
+          className={this.props.full === 'true' ? 'vertical-center full-searchbar' : 'static-top-right'}>
           <p className={this.props.full === 'true' ? '' : 'hidden'}>
             Add a city to see it's current weather conditions
           </p>

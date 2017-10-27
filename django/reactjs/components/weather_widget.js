@@ -26,7 +26,6 @@ class WeatherWidget extends Component {
   }
 
   renderCities() {
-    this.props.fetchWeatherCities();
     return _.map(this.props.cities, city => {
       return (
         <div
