@@ -13,11 +13,9 @@ class WeatherData extends Component {
           {this.props.name}
         </h1>
         <h3>
-          Current Conditions:<br />
-        {this.props.temp} &#8457;<br />
-        {this.props.desc}
+          Currently {this.props.temp}&#8457; with {this.props.desc}
         </h3>
-        
+
       </div>
     );
   };
